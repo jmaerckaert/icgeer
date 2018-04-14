@@ -1,3 +1,90 @@
 /**
- * Place your custom styles here.
+ * Custom style for ICGeer theme.
  */
+.form-required:after {
+  margin-left: 5px;
+}
+
+.user-login-form {
+  padding-top: 15px;
+}
+
+#block-views-block-candidats-pictures-slider-block-candidates-slider {
+  margin-top: 20px;
+}
+
+#block-views-block-candidats-pictures-slider-block-candidates-slider .flex-caption {
+  background-color: #044679;
+  margin-top: -10px;
+  display: block;
+  width: 100%;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 15px;
+}
+
+#block-views-block-candidats-pictures-slider-block-candidates-slider .candidate-title {
+  font-size: 16px;
+}
+
+#block-views-block-candidats-pictures-slider-block-candidates-slider .candidate-position {
+  font-size: 17px;
+  margin-top: -5px;
+}
+
+.page-node-type-candidate .field--type-email {
+  clear: both;
+  padding-top: 20px;
+}
+
+.view-candidates-list .field--type-email {
+  clear: both;
+  padding-top: 10px;
+}
+
+.view-candidates-list .field,
+.view-candidates-list .links {
+  margin-top: 10px;
+}
+
+.page-node-type-candidate .field,
+.page-node-type-candidate .links {
+  margin-top: 20px;
+}
+
+.view-candidates-list .views-row,
+.view-icgeer-news-list .views-row {
+  margin: 50px 0;
+}
+
+.view-candidates-list .views-row h2,
+.view-icgeer-news-list .views-row h2 {
+  margin-top: 0;
+}
+
+.view-candidates-list .views-row h2 a,
+.view-icgeer-news-list .views-row h2 a {
+  color: #000000;
+}
+
+#views-exposed-form-candidates-list-page-candidats-list .form-group .form-group,
+#views-exposed-form-icgeer-news-list-page-articles .form-group .form-group {
+  padding: 10px;
+  background-color: #f8f8f8;
+}
+
+#views-exposed-form-candidates-list-page-candidats-list .form-group a,
+#views-exposed-form-icgeer-news-list-page-articles .form-group a {
+  color: #000000;
+}
+
+#views-exposed-form-candidates-list-page-candidats-list .form-group .bef-link-active,
+#views-exposed-form-icgeer-news-list-page-articles .form-group .bef-link-active {
+  background-color: #e7e7e7;
+}
+
+button#edit-submit-candidates-list,
+button#edit-submit-icgeer-news-list {
+  display: none;
+}
