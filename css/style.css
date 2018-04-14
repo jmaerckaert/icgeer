@@ -5,6 +5,29 @@
   margin-left: 5px;
 }
 
+.candidate-form-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.candidate-form-button:hover {
+  background-color: #3e8e41;
+  color: #ffffff;
+}
+
+.candidate-form-button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .user-login-form {
   padding-top: 15px;
 }
