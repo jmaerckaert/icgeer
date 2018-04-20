@@ -111,3 +111,24 @@ button#edit-submit-candidates-list,
 button#edit-submit-icgeer-news-list {
   display: none;
 }
+
+.page-node-type-article .field--name-body {
+  margin-top: 20px;
+}
+
+.page-node-type-article .page-header {
+  margin-bottom: 5px;
+}
+
+.page-node-type-article .addtoany_list {
+  clear: both;
+  display: block;
+}
+
+.field--name-dynamic-token-fieldnode-dates-articles {
+  margin: 0 0 10px 0;
+}
+
+.field--name-dynamic-token-fieldnode-dates-articles .dates-articles {
+  color: #aaaaaa;
+}
