@@ -148,7 +148,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     $variables['breadcrumb'] = $breadcrumb;
-    // Intentionally left blank to disable base theme's alterations.
+    $variables['#cache']['contexts'][] = 'url';
   }
 
 }
