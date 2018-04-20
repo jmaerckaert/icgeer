@@ -118,7 +118,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if ($path_args[1] == 'candidats') {
-      if ($filter = \Drupal::request()->query->get('field_town_target_id')) {
+      if ($filter = \Drupal::request()->query->get('field_candidate_town_target_id')) {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
             'text' => t('Candidats'),
