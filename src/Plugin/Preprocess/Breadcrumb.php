@@ -98,7 +98,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if ($path_args[1] == 'articles') {
-      if ($filter = \Drupal::request()->query->get('field_tags_target_id')) {
+      if ($filter = \Drupal::request()->query->get('field_tags_target_id') && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
             'text' => t('News'),
@@ -109,7 +109,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
-      elseif (empty($path_args[3]) || $filter == 'All') {
+      elseif (empty($path_args[3])) {
         $breadcrumb[] = [
             'text' => t('News'),
             'attributes' => new Attribute(['class' => ['active']]),
@@ -118,7 +118,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if ($path_args[1] == 'candidats') {
-      if ($filter = \Drupal::request()->query->get('field_candidate_town_target_id')) {
+      if ($filter = \Drupal::request()->query->get('field_candidate_town_target_id') && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
             'text' => t('Candidats'),
@@ -129,7 +129,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
-      elseif (empty($path_args[3]) || $filter == 'All') {
+      elseif (empty($path_args[3])) {
         $breadcrumb[] = [
             'text' => t('Candidats'),
             'attributes' => new Attribute(['class' => ['active']]),
