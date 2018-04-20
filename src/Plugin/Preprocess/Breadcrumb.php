@@ -106,19 +106,19 @@ class Breadcrumb extends BootstrapBreadcrumb {
         ];
         $breadcrumb[] = [
             'text' => $term_article->getName(),
-            'url' => $term_article->url(),
+            'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
       else {
         $breadcrumb[] = [
-            'text' => t('Articles'),
+            'text' => t('News'),
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
     }
 
     if ($path_args[1] == 'candidats') {
-      if ($filter = \Drupal::request()->query->get('field_tags_target_id')) {
+      if ($filter = \Drupal::request()->query->get('field_town_target_id')) {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
             'text' => t('Candidats'),
@@ -126,7 +126,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
         ];
         $breadcrumb[] = [
             'text' => $term_article->getName(),
-            'url' => $term_article->url(),
+            'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
       else {
