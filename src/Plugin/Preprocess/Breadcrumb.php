@@ -29,13 +29,21 @@ class Breadcrumb extends BootstrapBreadcrumb {
     $path_args = explode('/', $current_path);
 
     if (!empty($path_args[2]) && $path_args[2] == 'village' && !empty($path_args[3])) {
-      $town_page = taxonomy_term_load_multiple_by_name($path_args[3], 'towns');
-      $town_page = reset($town_page);
+      $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
+      if(preg_match('/node\/(\d+)/', $path, $matches)) {
+        $town_page = Term::load($matches[1]);
+      }
+      //$town_page = taxonomy_term_load_multiple_by_name($path_args[3], 'towns');
+      //$town_page = reset($town_page);
     }
 
     if (!empty($path_args[2]) && $path_args[2] == 'categorie' && !empty($path_args[3])) {
-      $tag_page = taxonomy_term_load_multiple_by_name($path_args[3], 'tags');
-      $tag_page = reset($tag_page);
+      $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
+      if(preg_match('/node\/(\d+)/', $path, $matches)) {
+        $tag_page = Term::load($matches[1]);
+      }
+      //$tag_page = taxonomy_term_load_multiple_by_name($path_args[3], 'tags');
+      //$tag_page = reset($tag_page);
     }
 
     $types = ['article', 'candidate', 'page'];
