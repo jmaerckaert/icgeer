@@ -1,6 +1,26 @@
 /**
  * Custom style for ICGeer theme.
  */
+body {
+  font-size: 16px;
+}
+
+.feed-icon {
+  display: none;
+}
+
+footer.footer {
+  background-color: #f8f8f8;
+}
+
+.menu--footer li {
+  display: inline-block;
+}
+
+.menu--footer li a {
+  color: #333333;
+}
+
 .form-required:after {
   margin-left: 5px;
 }
@@ -112,8 +132,17 @@ button#edit-submit-icgeer-news-list {
   display: none;
 }
 
-.page-node-type-article .field--name-body {
-  margin-top: 20px;
+.node--type-article.node--view-mode-full .field--name-body {
+  margin: 20px 0;
+}
+
+.field--name-field-tags .btn.field--label {
+  padding-left: 0;
+  cursor: none;
+}
+
+.node--type-article.node--view-mode-full .addtoany_list {
+  padding-top: 15px;
 }
 
 .page-node-type-article .page-header {
@@ -131,4 +160,34 @@ button#edit-submit-icgeer-news-list {
 
 .field--name-dynamic-token-fieldnode-dates-articles .dates-articles {
   color: #aaaaaa;
+}
+
+.node--view-mode-teaser .field--name-node-title h2 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.node--view-mode-teaser .field--name-node-title h2 a {
+  color: #000000;
+}
+
+.node--view-mode-teaser .field--name-dynamic-token-fieldnode-links-button {
+  margin: 10px 0;
+}
+
+.node--type-article.node--view-mode-full .field--name-field-tags {
+  margin: 15px 0
+}
+
+.field--name-description {
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.node--type-article.node--view-mode-teaser {
+  border-style: solid;
+  border-width: 0 0 1px;
+  border-color: #efefef;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
 }

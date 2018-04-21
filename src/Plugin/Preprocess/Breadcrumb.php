@@ -30,7 +30,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (!empty($path_args[2]) && $path_args[2] == 'village' && !empty($path_args[3])) {
       $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
-      if(preg_match('/node\/(\d+)/', $path, $matches)) {
+      if(preg_match('/term\/(\d+)/', $path, $matches)) {
         $town_page = Term::load($matches[1]);
       }
       //$town_page = taxonomy_term_load_multiple_by_name($path_args[3], 'towns');
@@ -39,7 +39,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (!empty($path_args[2]) && $path_args[2] == 'categorie' && !empty($path_args[3])) {
       $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
-      if(preg_match('/node\/(\d+)/', $path, $matches)) {
+      if(preg_match('/term\/(\d+)/', $path, $matches)) {
         $tag_page = Term::load($matches[1]);
       }
       //$tag_page = taxonomy_term_load_multiple_by_name($path_args[3], 'tags');
