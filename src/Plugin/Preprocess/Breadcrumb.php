@@ -29,7 +29,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     $path_args = explode('/', $current_path);
 
     if (!empty($path_args[2]) && $path_args[2] == 'village' && !empty($path_args[3])) {
-      $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
+      $path = \Drupal::service('path.alias_manager')->getPathByAlias($current_path);
       if(preg_match('/term\/(\d+)/', $path, $matches)) {
         $town_page = Term::load($matches[1]);
       }
@@ -38,8 +38,9 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if (!empty($path_args[2]) && $path_args[2] == 'categorie' && !empty($path_args[3])) {
-      $path = \Drupal::service('path.alias_manager')->getPathByAlias('/this-is-the-alias');
+      $path = \Drupal::service('path.alias_manager')->getPathByAlias($current_path);
       if(preg_match('/term\/(\d+)/', $path, $matches)) {
+
         $tag_page = Term::load($matches[1]);
       }
       //$tag_page = taxonomy_term_load_multiple_by_name($path_args[3], 'tags');
@@ -106,8 +107,11 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if ($path_args[1] == 'articles') {
-      if ($filter = \Drupal::request()->query->get('field_tags_target_id') && $filter != 'All') {
+      $filter = \Drupal::request()->query->get('field_tags_target_id');
+      if ($filter && $filter != 'All') {
+        var_Dump(\Drupal::request()->query->get('field_tags_target_id'));
         $term_article = Term::load($filter);
+        var_dump($term_article);
         $breadcrumb[] = [
             'text' => t('News'),
             'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
@@ -126,7 +130,8 @@ class Breadcrumb extends BootstrapBreadcrumb {
     }
 
     if ($path_args[1] == 'candidats') {
-      if ($filter = \Drupal::request()->query->get('field_candidate_town_target_id') && $filter != 'All') {
+      $filter = \Drupal::request()->query->get('field_candidate_town_target_id');
+      if ($filter && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
             'text' => t('Candidats'),
