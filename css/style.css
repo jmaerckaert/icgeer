@@ -26,6 +26,10 @@ body {
   font-size: 16px;
 }
 
+ul.navbar-nav > li > a {
+  padding-bottom: 18px;
+}
+
 .feed-icon {
   display: none;
 }
@@ -127,12 +131,12 @@ footer.footer {
   color: #000000;
 }
 
-#views-exposed-form-candidates-list-page-candidats-list .form-group .bef-link-active,
+/*#views-exposed-form-candidates-list-page-candidats-list .form-group .bef-link-active,
 #views-exposed-form-icgeer-news-list-page-articles .form-group .bef-link-active {
   background-color: #286090;
   width: 100px;
   height: 50px;
-}
+}*/
 
 button#edit-submit-candidates-list,
 button#edit-submit-icgeer-news-list {
