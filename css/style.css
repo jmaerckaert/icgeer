@@ -138,6 +138,10 @@ footer.footer {
   height: 50px;
 }*/
 
+.node--type-candidate .node--view-mode-full div.field {
+  padding: 10px 0;
+}
+
 button#edit-submit-candidates-list,
 button#edit-submit-icgeer-news-list {
   display: none;
@@ -251,4 +255,36 @@ button#edit-submit-icgeer-news-list {
   color: white;
   font-size: 22px;
   padding: 16px 32px;
+}
+
+.view-dashboard span {
+  color: #ffffff;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+}
+
+.view-dashboard span.draft {
+  background-color: #007bff;
+}
+
+.view-dashboard span.published {
+  background-color: #28a745;
+}
+
+.view-dashboard span.archived {
+  background-color: #17a2b8;
+}
+
+.view-dashboard span.work {
+  background-color: #ffc107;
+}
+
+.view-dashboard span.trash {
+  background-color: #dc3545;
+}
+
+.view-dashboard .views-field-moderation-state {
+  padding: 0;
 }

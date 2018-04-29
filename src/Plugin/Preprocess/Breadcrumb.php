@@ -72,8 +72,8 @@ class Breadcrumb extends BootstrapBreadcrumb {
       $term_page = Term::load($node->get('field_candidate_town')->target_id);
 
       $breadcrumb[] = [
-          'text' => $term->getName(),
-          'url' => $term->url(),
+          'text' => $term_page->getName(),
+          'url' => $term_page->url(),
       ];
     }
 
