@@ -109,9 +109,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     if ($path_args[1] == 'articles') {
       $filter = \Drupal::request()->query->get('field_tags_target_id');
       if ($filter && $filter != 'All') {
-        var_Dump(\Drupal::request()->query->get('field_tags_target_id'));
         $term_article = Term::load($filter);
-        var_dump($term_article);
         $breadcrumb[] = [
             'text' => t('News'),
             'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
