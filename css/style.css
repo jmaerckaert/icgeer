@@ -24,6 +24,7 @@ div {
 
 body {
   font-size: 16px;
+  /*background-color: #cbcbcb;*/
 }
 
 @media all and (min-width: 1800px) {
@@ -38,6 +39,29 @@ body {
   .navbar-text {
     display: none;
   }
+  
+  .navbar .navbar-brand {
+    margin-left: 85px;
+  }
+  
+  .navbar .logo img {
+    height: 50px;
+  }
+}
+
+header.navbar {
+  padding-left: 0;
+}
+
+.navbar .logo {
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  padding-left: 0;
+}
+
+.navbar-brand {
+  margin-left: 85px;
 }
 
 ul.navbar-nav > li > a {
@@ -87,11 +111,24 @@ footer.footer {
   transform: translateY(4px);
 }
 
+.field--type-email {
+  clear: both;
+}
+
+.node--type-candidate .field--items {
+  margin-bottom: 10px;
+}
+
 .user-login-form {
   padding-top: 15px;
 }
 
-#block-views-block-candidats-pictures-slider-block-candidates-slider {
+#block-views-block-candidats-pictures-slider-block-candidates-slider,
+#block-views-block-candidats-pictures-slider-block-candidates-slider h2 {
+  margin-top: 0;
+}
+
+#block-views-block-our-projects-block-our-projects {
   margin-top: 20px;
 }
 
@@ -126,6 +163,10 @@ footer.footer {
   margin-top: 20px;
 }
 
+.node--type-project .field--name-body {
+  margin-bottom: 20px;
+}
+
 .view-candidates-list .views-row,
 .view-taxonomy-term .views-row,
 .view-icgeer-news-list .views-row {
@@ -145,13 +186,16 @@ footer.footer {
 }
 
 #views-exposed-form-candidates-list-page-candidats-list .form-group .form-group,
-#views-exposed-form-icgeer-news-list-page-articles .form-group .form-group {
+#views-exposed-form-icgeer-news-list-page-articles .form-group .form-group,
+#views-exposed-form-programme-page-program .form-group .form-group {
   padding: 10px;
   background-color: #f8f8f8;
+  display: inline-block;
 }
 
 #views-exposed-form-candidates-list-page-candidats-list .form-group a,
-#views-exposed-form-icgeer-news-list-page-articles .form-group a {
+#views-exposed-form-icgeer-news-list-page-articles .form-group a,
+#views-exposed-form-programme-page-program .form-group a {
   color: #000000;
 }
 
@@ -162,17 +206,28 @@ footer.footer {
   height: 50px;
 }*/
 
-.node--type-candidate .node--view-mode-full div.field {
+.node--type-candidate .node--view-mode-full div.field,
+.page-node-type-program .node--view-mode-full div.field {
   padding: 10px 0;
 }
 
 button#edit-submit-candidates-list,
-button#edit-submit-icgeer-news-list {
+button#edit-submit-icgeer-news-list,
+button#edit-submit-programme {
   display: none;
 }
 
-.node--type-article.node--view-mode-full .field--name-body {
+.node--type-article.node--view-mode-full .field--name-body,
+.view-id-programme .field {
   margin: 20px 0;
+}
+
+.view-id-programme .addtoany_list,
+.page-node-type-program .addtoany_list {
+  display: block;
+  width: 100%;
+  clear: both;
+  padding-top: 10px;
 }
 
 .field--name-field-tags .btn.field--label {
@@ -223,7 +278,9 @@ button#edit-submit-icgeer-news-list {
   margin: 15px 0;
 }
 
-.node--type-article.node--view-mode-teaser {
+.node--type-article.node--view-mode-teaser,
+.node--type-project.node--view-mode-teaser,
+.node--type-program.node--view-mode-teaser {
   border-style: solid;
   border-width: 0 0 1px;
   border-color: #efefef;
@@ -276,9 +333,13 @@ button#edit-submit-icgeer-news-list {
 .flex-viewport .flex-caption {
   background-color: #286090;
   border-radius: 5px;
-  color: white;
+  color: #ffffff;
   font-size: 22px;
   padding: 16px 32px;
+}
+
+.flex-viewport .flex-caption a {
+  color: #ffffff;
 }
 
 .view-dashboard span {
