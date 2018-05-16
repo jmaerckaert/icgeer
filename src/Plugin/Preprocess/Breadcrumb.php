@@ -47,7 +47,17 @@ class Breadcrumb extends BootstrapBreadcrumb {
       //$tag_page = reset($tag_page);
     }
 
-    $types = ['article', 'candidate', 'page'];
+    if (!empty($path_args[2]) && $path_args[2] == 'theme' && !empty($path_args[3])) {
+      $path = \Drupal::service('path.alias_manager')->getPathByAlias($current_path);
+      if(preg_match('/term\/(\d+)/', $path, $matches)) {
+
+        $theme_program = Term::load($matches[1]);
+      }
+      //$tag_page = taxonomy_term_load_multiple_by_name($path_args[3], 'tags');
+      //$tag_page = reset($tag_page);
+    }
+
+    $types = ['article', 'candidate', 'page', 'program', 'project'];
 
     if (isset($node) && $node->getType() == 'article') {
       $term = Term::load($node->get('field_tags')->target_id);
@@ -77,6 +87,27 @@ class Breadcrumb extends BootstrapBreadcrumb {
       ];
     }
 
+    if (isset($node) && $node->getType() == 'program') {
+      $breadcrumb[] = [
+          'text' => t('Notre programme'),
+          'url' => Url::fromRoute('view.programme.page_program'),
+      ];
+
+      $term_page = Term::load($node->get('field_program_theme')->target_id);
+
+      $breadcrumb[] = [
+          'text' => $term_page->getName(),
+          'url' => $term_page->url(),
+      ];
+    }
+
+    if (isset($node) && $node->getType() == 'project') {
+      $breadcrumb[] = [
+          'text' => t('Nos projets'),
+          'url' => Url::fromRoute('view.projects.page_projects'),
+      ];
+    }
+
     if (isset($node) && in_array($node->getType(), $types)) {
       $breadcrumb[] = [
         'text' => $node->getTitle(),
@@ -97,7 +128,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (isset($tag_page)) {
       $breadcrumb[] = [
-          'text' => t('News'),
+          'text' => t('Articles'),
           'url' => Url::fromRoute('view.candidates_list.page_candidats_list'),
       ];
       $breadcrumb[] = [
@@ -106,12 +137,23 @@ class Breadcrumb extends BootstrapBreadcrumb {
       ];
     }
 
-    if ($path_args[1] == 'articles') {
+    if (isset($theme_program)) {
+      $breadcrumb[] = [
+          'text' => t('Notre programme'),
+          'url' => Url::fromRoute('view.programme.page_program'),
+      ];
+      $breadcrumb[] = [
+          'text' => $theme_program->getName(),
+          'attributes' => new Attribute(['class' => ['active']]),
+      ];
+    }
+
+    if ($path_args[1] == 'articles' && empty($path_args[2])) {
       $filter = \Drupal::request()->query->get('field_tags_target_id');
       if ($filter && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
-            'text' => t('News'),
+            'text' => t('Articles'),
             'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
         ];
         $breadcrumb[] = [
@@ -121,13 +163,13 @@ class Breadcrumb extends BootstrapBreadcrumb {
       }
       elseif (empty($path_args[3])) {
         $breadcrumb[] = [
-            'text' => t('News'),
+            'text' => t('Articles'),
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
     }
 
-    if ($path_args[1] == 'candidats') {
+    if ($path_args[1] == 'candidats' && empty($path_args[2])) {
       $filter = \Drupal::request()->query->get('field_candidate_town_target_id');
       if ($filter && $filter != 'All') {
         $term_article = Term::load($filter);
@@ -143,6 +185,27 @@ class Breadcrumb extends BootstrapBreadcrumb {
       elseif (empty($path_args[3])) {
         $breadcrumb[] = [
             'text' => t('Candidats'),
+            'attributes' => new Attribute(['class' => ['active']]),
+        ];
+      }
+    }
+
+    if ($path_args[1] == 'programme' && empty($path_args[2])) {
+      $filter = \Drupal::request()->query->get('field_program_theme_target_id');
+      if ($filter && $filter != 'All') {
+        $theme_program = Term::load($filter);
+        $breadcrumb[] = [
+            'text' => t('Notre programme'),
+            'url' => Url::fromRoute('view.programme.page_program'),
+        ];
+        $breadcrumb[] = [
+            'text' => $theme_program->getName(),
+            'attributes' => new Attribute(['class' => ['active']]),
+        ];
+      }
+      elseif (empty($path_args[3])) {
+        $breadcrumb[] = [
+            'text' => t('Notre programme'),
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
