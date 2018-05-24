@@ -129,7 +129,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
     if (isset($tag_page)) {
       $breadcrumb[] = [
           'text' => t('Articles'),
-          'url' => Url::fromRoute('view.candidates_list.page_candidats_list'),
+          'url' => Url::fromRoute('view.candidates_list.page_articles'),
       ];
       $breadcrumb[] = [
           'text' => $tag_page->getName(),

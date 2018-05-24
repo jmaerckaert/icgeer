@@ -163,15 +163,19 @@ footer.footer {
   margin-top: 20px;
 }
 
+.view-candidates-list .field--name-dynamic-token-fieldnode-know-more-button {
+  margin-bottom: 10px;
+}
+
 .node--type-project .field--name-body {
   margin-bottom: 20px;
 }
-
+/*
 .view-candidates-list .views-row,
 .view-taxonomy-term .views-row,
 .view-icgeer-news-list .views-row {
   margin: 50px 0;
-}
+}*/
 
 .view-candidates-list .views-row h2,
 .view-taxonomy-term .views-row h2,
@@ -280,7 +284,8 @@ button#edit-submit-programme {
 
 .node--type-article.node--view-mode-teaser,
 .node--type-project.node--view-mode-teaser,
-.node--type-program.node--view-mode-teaser {
+.node--type-program.node--view-mode-teaser,
+.node--type-candidate.node--view-mode-teaser {
   border-style: solid;
   border-width: 0 0 1px;
   border-color: #efefef;
