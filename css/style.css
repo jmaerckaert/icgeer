@@ -163,7 +163,7 @@ footer.footer {
   margin-top: 20px;
 }
 
-.view-candidates-list .field--name-dynamic-token-fieldnode-know-more-button {
+.node--type-candidate.node--view-mode-teaser .field--name-dynamic-token-fieldnode-know-more-button {
   margin-bottom: 10px;
 }
 
