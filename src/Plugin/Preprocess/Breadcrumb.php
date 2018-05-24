@@ -63,7 +63,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
       $term = Term::load($node->get('field_tags')->target_id);
 
       $breadcrumb[] = [
-          'text' => t('News'),
+          'text' => t('Nos articles'),
           'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
       ];
 
@@ -75,7 +75,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (isset($node) && $node->getType() == 'candidate') {
       $breadcrumb[] = [
-          'text' => t('Candidats'),
+          'text' => t('Nos candidats'),
           'url' => Url::fromRoute('view.candidates_list.page_candidats_list'),
       ];
 
@@ -117,7 +117,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (isset($town_page)) {
       $breadcrumb[] = [
-          'text' => t('Candidats'),
+          'text' => t('Nos candidats'),
           'url' => Url::fromRoute('view.candidates_list.page_candidats_list'),
       ];
       $breadcrumb[] = [
@@ -128,8 +128,8 @@ class Breadcrumb extends BootstrapBreadcrumb {
 
     if (isset($tag_page)) {
       $breadcrumb[] = [
-          'text' => t('Articles'),
-          'url' => Url::fromRoute('view.candidates_list.page_articles'),
+          'text' => t('Nos articles'),
+          'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
       ];
       $breadcrumb[] = [
           'text' => $tag_page->getName(),
@@ -153,7 +153,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
       if ($filter && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
-            'text' => t('Articles'),
+            'text' => t('Nos articles'),
             'url' => Url::fromRoute('view.icgeer_news_list.page_articles'),
         ];
         $breadcrumb[] = [
@@ -163,7 +163,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
       }
       elseif (empty($path_args[3])) {
         $breadcrumb[] = [
-            'text' => t('Articles'),
+            'text' => t('Nos articles'),
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
@@ -174,7 +174,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
       if ($filter && $filter != 'All') {
         $term_article = Term::load($filter);
         $breadcrumb[] = [
-            'text' => t('Candidats'),
+            'text' => t('Nos candidats'),
             'url' => Url::fromRoute('view.candidates_list.page_candidats_list'),
         ];
         $breadcrumb[] = [
@@ -184,7 +184,7 @@ class Breadcrumb extends BootstrapBreadcrumb {
       }
       elseif (empty($path_args[3])) {
         $breadcrumb[] = [
-            'text' => t('Candidats'),
+            'text' => t('Nos candidats'),
             'attributes' => new Attribute(['class' => ['active']]),
         ];
       }
