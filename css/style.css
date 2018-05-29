@@ -27,6 +27,22 @@ body {
   /*background-color: #cbcbcb;*/
 }
 
+@media all and (min-width: 1450px) {
+  body {
+    background-image: url("../img/icbackground3.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
+@media all and (min-width: 1590px) {
+  body {
+    background-image: url("../img/icbackground2.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+}
+
 @media all and (min-width: 1800px) {
   body {
     background-image: url("../img/icbackground1.png");
