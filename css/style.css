@@ -135,6 +135,10 @@ footer.footer {
   margin-bottom: 20px;
 }
 
+.node--type-article.node--view-mode-full .field--name-field-article-link {
+  margin-top: 20px;
+}
+
 .field--type-email {
   clear: both;
 }
