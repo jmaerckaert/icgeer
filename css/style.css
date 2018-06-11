@@ -80,6 +80,10 @@ header.navbar {
   margin-left: 85px;
 }
 
+.navbar-text {
+  font-weight: bold;
+}
+
 ul.navbar-nav > li > a {
   padding-bottom: 18px;
 }
@@ -125,6 +129,10 @@ footer.footer {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.node--type-candidate.node--view-mode-full .field--name-body {
+  margin-bottom: 20px;
 }
 
 .field--type-email {
