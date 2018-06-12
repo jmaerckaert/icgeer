@@ -63,6 +63,10 @@ body {
   .navbar .logo img {
     height: 50px;
   }
+  
+  .navbar .logo {
+    top: -9px;
+  }
 }
 
 header.navbar {
