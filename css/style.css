@@ -65,7 +65,7 @@ body {
   }
   
   .navbar .logo {
-    top: -9px;
+    top: -9px!important;
   }
 }
 
