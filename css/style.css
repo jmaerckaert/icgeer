@@ -61,11 +61,17 @@ body {
   }
   
   .navbar .logo img {
-    height: 50px;
+    height: 54px;
   }
   
   .navbar .logo {
     top: -9px!important;
+  }
+}
+
+@media all and (max-width: 767px) {
+  .navbar .logo img {
+    height: 51px;
   }
 }
 
