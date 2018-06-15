@@ -424,3 +424,13 @@ button#edit-submit-programme {
 .view-dashboard .views-field-moderation-state {
   padding: 0;
 }
+
+.region-footer #block-icgeer-footer {
+  float: left;
+}
+
+.region-footer #block-bettercalljonathan {
+  float: right;
+  display: inline-block;
+  width: 30px;
+}
