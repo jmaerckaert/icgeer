@@ -27,6 +27,16 @@ body {
   /*background-color: #cbcbcb;*/
 }
 
+.region-footer #block-icgeer-footer {
+  float: left;
+}
+
+.region-footer #block-bettercalljonathan {
+  float: right;
+  display: inline-block;
+  width: 30px;
+}
+
 @media all and (min-width: 1450px) {
   body {
     background-image: url("../img/icbackground3.png");
@@ -72,6 +82,11 @@ body {
 @media all and (max-width: 767px) {
   .navbar .logo img {
     height: 51px;
+  }
+  
+  .region-footer #block-bettercalljonathan {
+    float: unset;
+    padding-left: 15px;
   }
 }
 
@@ -423,14 +438,4 @@ button#edit-submit-programme {
 
 .view-dashboard .views-field-moderation-state {
   padding: 0;
-}
-
-.region-footer #block-icgeer-footer {
-  float: left;
-}
-
-.region-footer #block-bettercalljonathan {
-  float: right;
-  display: inline-block;
-  width: 30px;
 }
