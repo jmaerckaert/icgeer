@@ -77,6 +77,15 @@ body {
   .navbar .logo {
     top: -9px!important;
   }
+  
+  .menu--account {
+    display: none;
+  }
+  
+  .navbar-brand {
+    display: none;
+    float: right;
+  }
 }
 
 @media all and (max-width: 767px) {
@@ -438,4 +447,9 @@ button#edit-submit-programme {
 
 .view-dashboard .views-field-moderation-state {
   padding: 0;
+}
+
+.menu--account {
+  margin-left: 0;
+  margin-top: 15px;
 }
