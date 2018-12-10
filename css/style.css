@@ -86,6 +86,14 @@ body {
     display: none;
     float: right;
   }
+  
+  .navbar-nav {
+    float: right;
+  }
+  
+  .navbar-nav a {
+    padding: 10px 10px;
+  }
 }
 
 @media all and (max-width: 767px) {
